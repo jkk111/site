@@ -7,6 +7,7 @@ COPY server/package.json .
 COPY server/yarn.lock .
 
 RUN yarn --freeze-lockfile
+RUN yarn global add ts-node
 
 COPY . /opt/workspace
 
