@@ -15,6 +15,11 @@ app.post('/email', bodyParser.json(), async (req, res) => {
   res.send('ok')
 })
 
+app.get('/email', async (req, res) => {
+  const resp = await db.query('SELECT * FROM email')
+  res.send(resp.rows)
+})
+
 app.use(express.static(staticPath))
 
 const run = async () => {
