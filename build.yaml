@@ -34,7 +34,7 @@ steps:
         script: |
           cat /etc/resolv.conf
           echo "Clear Old Stacks"
-          ./removeStacks.sh
+          /opt/workspace/removeStacks.sh
           echo "Starting Deployment"
           # export VERSION=LOCAL_VERSION
           echo $LOCAL_VERSION
