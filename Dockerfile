@@ -12,4 +12,4 @@ COPY . /opt/workspace
 
 EXPOSE 8080
 SHELL [ "/bin/bash", "--rcfile", "/root/.bashrc", "-ci" ]
-CMD ["./start.sh"]
+CMD ["/opt/workspace/start.sh"]
