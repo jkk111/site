@@ -2,6 +2,9 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const db = require('./db')
+const path = require('path')
+
+const staticPath = path.join(__dirname, '../client')
 
 app.post('/email', bodyParser.json(), async (req, res) => {
   const { email, name, subject, message } = req.body
@@ -11,6 +14,8 @@ app.post('/email', bodyParser.json(), async (req, res) => {
   )
   res.send('ok')
 })
+
+app.use(express.static(staticPath))
 
 const run = async () => {
   await db.init()
