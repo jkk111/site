@@ -1,0 +1,51 @@
+apiVersion: zalando.org/v1
+kind: StackSet
+metadata:
+  name: website
+spec:
+  ingress:
+    hosts: [website.ingress.john-kevin.me]
+    backendPort: 8080
+  stackLifecycle:
+    scaledownTTLSeconds: 300
+    limit: 5
+  stackTemplate:
+    spec:
+      version: v$LOCAL_VERSION
+      replicas: 1
+      horizontalPodAutoscaler:
+        minReplicas: 1
+        maxReplicas: 10
+        metrics:
+          - type: Resource
+            resource:
+              name: cpu
+              targetAverageUtilization: 50
+      podTemplate:
+        spec:
+          containers:
+            - name: website
+              image: registry.john-kevin.me/website:$LOCAL_VERSION
+              imagePullPolicy: Always
+              envFrom:
+                - configMapRef:
+                    name: postgres-config
+              ports:
+                - containerPort: 8080
+                  name: ingress
+              resources:
+                limits:
+                  cpu: 10m
+                  memory: 250Mi
+                requests:
+                  cpu: 10m
+                  memory: 250Mi
+          initContainers:
+            - name: init-db
+              image: busybox:1.28
+              command:
+                [
+                  'sh',
+                  '-c',
+                  'until nslookup postgres; do echo waiting for postgres; sleep 2; done;',
+                ]
