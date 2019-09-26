@@ -1,0 +1,291 @@
+
+<!DOCTYPE html5>
+<html>
+<head>
+  <title>John-Kevin.me</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="helper.js"></script>
+  <script>
+    window.onerror = function(e, src, line) {
+      alert(line);
+    }
+  </script>
+  <style>
+    body > a:first-of-type {
+      display: none;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CV webpage for John-Kevin Kelly"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:url" content="https://john-kevin.me/cv-page.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="John-Kevin Kelly CV">
+  <meta property="og:description" content="Longer web version of my Curriculum Vitae">
+  <!-- <meta property="og:image" content="https://john-kevin.me/snip_cv.png"> -->
+</head>
+<body>
+  <div id="notifications">
+  </div>
+  <div class="warn">
+    Currently In the process of migrating to new architecture.
+    Recovering from old backup, some info is out of data
+  </div>
+  <div id="head" class="block">
+    <h1 id="title">John-Kevin Kelly</h1>
+    <nav id="nav" class="block">
+      <div id="nav-items">
+        <a href="#about" class="index-link">
+          <div class="nav-item">
+            About Me
+          </div>
+        </a>
+        <a href="#experience" class="index-link">
+          <div class="nav-item">
+            Experience
+          </div>
+        </a>
+        <a href="#projects" class="index-link">
+          <div class="nav-item">
+            Projects
+          </div>
+        </a>
+        <a href="#volunteer-work" class="index-link">
+          <div class="nav-item">
+            Volunteer Work
+          </div>
+        </a>
+        <a href="#skills" class="index-link">
+          <div class="nav-item">
+            Skills
+          </div>
+        </a>
+        <a href="#contact" class="index-link">
+          <div class="nav-item">
+            Contact
+          </div>
+        </a>
+      </div>
+      <a href="#head" id="menu-toggle">
+        <div class="nav-item">
+          Menu
+        </div>
+      </a>
+    </nav>
+  </div>
+  <div id="about" class="block">
+    <div class="heading">
+      About Me
+    </div>
+    <div class="content">
+    Hi I'm John-Kevin Kelly, Final Year Computer Science Student Studying at Trinity College Dublin.
+    </div>
+  </div>
+  <div id="experience" class="block">
+    <div class="heading">
+      Experience
+    </div>
+    <div class="content">
+      <ul id="experience-list">
+        <li>
+          <h4>Operations Engineering Intern — Proofpoint</h4>
+          <h5>June 2017 - September 2017</h5>
+          <ul>
+            <li>Developing in-house tools.</li>
+            <li>Development in Python (w/ Flask + NGINX) and React.</li>
+          </ul>
+        </li>
+        <li>
+          <h4>Youth leader / Mentor</h4>
+          <h5>October 2016 - Current</h5>
+          <ul>
+            <li>Teaching children high level programming concepts.</li>
+            <li>Managing volunteers and helping them develop necessary skills.</li>
+            <li>Developing and adapting content and coursework suitable for young people.</li>
+            <li>Working directly with young people to help develop skills and pursue interests.</li>
+          </ul>
+        </li>
+        <li>
+          <h4>Full-Stack Developer (PHP, MySql, CodeIgniter Framework) — CluBytes.com</h4>
+          <h5>June 2016 - Current</h5>
+          <ul>
+            <li>SQL schema migration.</li>
+            <li>Maintaining linux based servers.</li>
+            <li>Massive refactoring of existing codebase.</li>
+            <li>Implementing a number of features on the platform.</li>
+            <li>Designing and maintaining tools for development.</li>
+          </ul>
+        </li>
+        <li>
+          <h4>Web Developer — Trinity College Dublin - Research and Innovation</h4>
+          <h5>October 2015 - August 2016</h5>
+          <ul>
+            <li>Updating existing content.</li>
+            <li>Building and designing tools for internal use.</li>
+          </ul>
+        </li>
+        <li>
+          <h4>STEP Intern (Web - Polymer) — Google</h4>
+          <h5>July 2015 - September 2015</h5>
+          <ul>
+            <li>Designing internal training systems using Polymer.</li>
+            <li>Designing web services using Python and Flask</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="projects" class="block">
+    <div class="heading">
+      Projects
+    </div>
+    <div class="content">
+      <ul id="projects-list">
+        <li>
+          <h4><a href="https://github.com/jkk111/Decentralized-Messenger">Secure Messenger</a></h4>
+          <p>
+            Originally coined as a distributed messenger, I developed a Node.JS based messenger
+            with secure end-to-end encryption, and a Polymer front-end, all messages are securely
+            encrypted and it is possible for a client to maintain their own private key,
+            preventing a compromised server from decrypting messages.
+          </p>
+        </li>
+        <li>
+          <h4><a href="https://github.com/jkk111/Decentralized-Messenger">Synchronized Audio Player</a></h4>
+          <p>
+            Audio Player written in Node.JS, uses websockets to provide a fast means of communicating
+            between server and clients, thus allowing a (mostly) synchronized audio playing experience.
+          </p>
+        </li>
+        <li>
+          <h4><a href="https://github.com/jkk111/UDP-Messenger/">UDP Messenger</a></h4>
+          <p>
+            Decentralized messenger written in Java,
+            uses datagram packets to transmit information in a 'JSON-like' format and can use both
+            distance vector or link state routing to route messages via connected hosts.
+          </p>
+        </li>
+        <li>
+          <h4><a href="https://github.com/jkk111/Remote-Logger">Remote Logger</a></h4>
+          <p>
+            Logging engine written in Node.JS with a RethinkDB datastore.
+            Designed to handle very heavy logging loads with real-time transmission,
+            and relaying to connected clients. Uses socket.io, and has plugins for Java and Node.js.
+          </p>
+        </li>
+        <li>
+          <h4><a href="#webserver">Web Server (closed source, plans to open source)</a></h4>
+          <p>
+            I've been working on my web stack for about 3-4 months now, it's based around Node.js.
+          </p>
+          <p>
+            At its core is the load balanacing proxy, it allows load balancing across multiple threads or multiple machines
+            and is based on the source ip.
+          </p>
+          <p>
+            When the user makes a request, it is checked against a database of micro-services, if the micro-service
+            exists, the request is proxied to the micro-service.
+          </p>
+          <p>Throughout the entire system, there is a huge amount of logging and error handling,
+              automated notification system if there are errors
+          </p>
+          <p>
+            Modules can also communicate with each other, via IPC if local, or other means if remote.
+          </p>
+          <p>
+            The proxy also supports proxying and synchronization of websockets, allowing Socket.IO rooms to run relatively seamlessly.
+          </p>
+        </li>
+        <li>  
+          <h4><a href="https://github.com/jkk111/indigo">Indigo - High Performance Application Proxy</a></h4>
+          <p>
+            The goal of indigo is to completely replace my existing web-stack, allowing easier separation of micro-services,
+            as well as providing a secure platform from the outset.
+          </p>
+          <p>
+            Inspired by numerous attempts to abstract away the complexities of adding a new service to my stack, Indigo is designed to allow me to just write code and not worry about anything else.
+          </p>
+          <p>
+            Designed to be run behind a reverse Proxy such as NGINX, indigo minimizes the amount of internal TCP traffic by using system level sockets (unix sockets/windows - named pipes).
+          </p>
+          <p>
+            Indigo uses very few platform specific features, allowing it to be significantly more maintainable and reduces duplication where possible.
+          </p>
+        </li>
+        <li>
+          <h4><a href="https://github.com/jkk111/workday_hackathon">Workday Terminal Game Hackathon</a></h4>
+          <p>
+            Simple terminal based version of a tyrian style game.
+          </p>
+          <p>
+            Written in 3 hours for the Workday Hackathon, on 24th November 2016.
+          </p>
+        </li>
+      </ul>
+      <h4>Theres plenty more on my <a href="//web.archive.org/web/20180903050650/https://github.com/jkk111">GitHub</a></h4>
+    </div>
+  </div>
+  <div id="volunteer-work" class="block">
+    <div class="heading">
+      Volunteer Work
+    </div>
+    <div class="content">
+      <ul id="volunteer-list">
+        <li>
+          <h4>Foróige</h4>
+          <h5>Volunteer, Leader, Facilitator 2012 - Current</h5>
+          <p>
+            Over the years I have worked with Foróige my role has evolved,
+            When I first got involved with Foróige I was volunteering to help
+            with the summer programmes they run in my local area. However in recent
+            years I have taken a more active role with the organisation, and have been
+            running my own <a href="http://www.techspace.ie/">TechSpace</a> Since
+            September 2015, in which we've done:
+            <ul class="no-top">
+              <li>Photoshop.</li>
+              <li>Video Editing (Adobe Premiere).</li>
+              <li>Web Development.</li>
+              <li>Game Development.</li>
+            </ul>
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="skills" class="block">
+    <div class="heading">
+      Skills
+    </div>
+    <div class="content">
+      <input id="skillsearch" placeholder="Search Skills..." type="text" name="skillsinput">
+      <div id="skills-box">
+      </div>
+      <div id="skill-desc">
+        <div id="skill-title">
+
+        </div>
+        <div id="skill-description">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="contact" class="block">
+    <div class="heading">
+      Contact
+    </div>
+    <div class="content">
+      <div id="contact-direct">You can contact me via the form below, or access my Email and Phone number via my
+        <a href="https://john-kevin.me/cv.pdf">Curriculum Vitae</a>, Or by clicking <a href="#" onclick="showEmail(event)">Here</a>
+      </div>
+      <form id="contact-form" method="POST" action="https://john-kevin.me/sendEmail" enctype="multipart/form-data">
+        <input id="emailinput" type="text" placeholder="Email" onblur="validateEmail(this);" name="email"></input>
+        <input id="nameinput" placeholder="Name..." type="text" name="name"></input>
+        <input id="subjectinput" type="text" placeholder="Subject" name="subject"></input>
+        <textarea id="messageinput" placeholder="Message..." rows="6" form="contact-form" name="message"></textarea>
+        <input id="sendinput" type="submit" value="Send"></input>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
