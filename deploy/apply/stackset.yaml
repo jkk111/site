@@ -2,6 +2,7 @@ apiVersion: zalando.org/v1
 kind: StackSet
 metadata:
   name: website
+  version: v$LOCAL_VERSION
 spec:
   ingress:
     hosts: [website.ingress.john-kevin.me]
