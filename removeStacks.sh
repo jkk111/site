@@ -6,4 +6,3 @@ while read -r line; do
     kubectl delete stack $line;
   fi
 done <<< $instances
-kubectl delete stackset $APPLICATION
