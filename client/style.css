@@ -1,0 +1,187 @@
+* {
+  font-family: monospace;
+  --about-color: white;
+  --experience-color: #f4989c;
+  --projects-color: #d6f6dd;
+  --volunteer-color: #ebd2b4;
+  --skills-color: #dac4f7;
+  --contact-color: #95d9da;
+}
+
+html,
+body {
+  margin: 0;
+  background: black;
+}
+
+.warn {
+  padding: 0.25em;
+  color: red;
+  border: 2px solid yellow;
+  background: rgb(233, 230, 201);
+}
+
+#notifications {
+  position: absolute;
+  z-index: 1000;
+  left: 25%;
+  right: 25%;
+  /* background: orange; */
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.block {
+  padding: 0 0.5em;
+}
+
+.block:first-of-type {
+  padding-top: 0;
+}
+
+.index-link {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0 1.5em;
+  margin: 0;
+}
+
+#nav,
+#title {
+  display: inline-block;
+}
+
+#head {
+  display: flex;
+  align-items: center;
+  background: #d6f6dd;
+}
+
+.nav-item {
+  padding: 0.2em 1em;
+  background: #d6f6dd;
+  font-size: 1.5em;
+}
+
+.nav-item:hover {
+  filter: brightness(85%);
+}
+
+.nav-item:active {
+  filter: brightness(75%);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.collapsed + .content {
+  display: none;
+}
+
+.heading {
+  font-size: 1.25em;
+  padding: 0.25em 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.content {
+  font-size: 1.125em;
+}
+
+.heading.collapsed::after {
+  content: "[-]";
+}
+
+.heading:not(.collapsed)::after {
+  content: "[+]";
+}
+
+#about {
+  background: var(--about-color);
+}
+
+#experience {
+  background: var(--experience-color);
+}
+
+#projects {
+  background: var(--projects-color);
+}
+
+#contact {
+  background: var(--contact-color);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#volunteer-work {
+  background: var(--volunteer-color);
+}
+
+#skills {
+  background: var(--skills-color);
+}
+
+.content {
+  padding-bottom: 0.5em;
+}
+
+#skillsearch {
+  width: 100%;
+  font-size: 1.5em;
+  border-radius: 0.125em;
+  border: none;
+  padding: 0 0.25em;
+  margin: 0.5em 0;
+}
+
+form > input,
+form > textarea {
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  border: none;
+  border-radius: 0.125em;
+  padding-left: 0.25em;
+}
+
+#emailinput,
+#nameinput {
+  width: 49.5%;
+  box-sizing: border-box;
+}
+
+#emailinput {
+  float: left;
+}
+
+#nameinput {
+  float: right;
+}
+
+#subjectinput {
+  width: 100%;
+}
+
+#messageinput {
+  width: 100%;
+}
+
+#sendinput {
+  width: 100%;
+}

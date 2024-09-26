@@ -1,0 +1,41 @@
+env:
+  REPO: registry.john-kevin.me
+  IMAGE: website
+  VERSION: 4
+  APPLICATION: website
+steps:
+  - id: build
+    type: script
+    steps:
+      - id: build
+        script: |
+          ls -hal ~/
+          ls -hal ~/.kube
+          cp ~/.kube/admin.conf config.yaml
+          echo "Building Image"
+          docker build -t ${REPO}/${IMAGE}:${LOCAL_VERSION} .
+          echo "Image Built"
+          docker tag ${REPO}/${IMAGE}:${LOCAL_VERSION} ${REPO}/${IMAGE}:latest
+          echo "Image tagged latest"
+      - id: push
+        script: |
+          echo "Pushing Image"
+          n=0
+          while [ $n -le 5 ]
+          do
+            docker push ${REPO}/${IMAGE}:${LOCAL_VERSION} && break
+            n=$[$n+1]
+            sleep 10
+          done
+          echo "Pushed Image"
+          docker push ${REPO}/${IMAGE}:latest
+          echo "Pushed Latest"
+      - id: deployment
+        script: |
+          cat /etc/resolv.conf
+          echo "Clear Old Stacks"
+          ./removeStacks.sh
+          echo "Starting Deployment"
+          # export VERSION=LOCAL_VERSION
+          echo $LOCAL_VERSION
+          envsubst < deploy/apply/stackset.yaml | kubectl apply -f -
